@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>页面</title>
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<!-- 可选的Bootstrap主题文件（一般不使用） -->
+<!-- <script src="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"></script> -->
+ 
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+ 
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+jpa+thymleaf+springBoot
+<a th:href="@{/toadd}"><button>添加</button></a>
+<table border="1">
+  <tr>
+    <th>编号</th>
+    <th>名称</th>
+    <th>国家</th>
+    <th>13年</th>
+    <th>14年</th>
+    <th>15年</th>
+    <th>操作</th>
+  </tr>
+  <tr  th:each="m : ${list}">
+    <td th:text="${m.id}">
+    <span th:text="${m.id}"></span> 
+    </td>
+    <td th:text="${m.name}"> </td>
+    <td th:text="${m.country}"> </td>
+    <td th:text="${m.thvalue}"> </td>
+    <td th:text="${m.fovalue}"> </td>
+    <td th:text="${m.fivalue}"> </td>
+    <td> 
+    <a th:href="@{/todel(id=${m.id})}"><button>删除</button></a>
+    <a th:href="@{/toedit(id=${m.id})}"><button>修改</button></a>
+    </td>
+
+  </tr>
+</table>
+</div>
+</body>
+</html>
